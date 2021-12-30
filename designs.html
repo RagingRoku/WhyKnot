@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Why Knot > Designs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Load bootstrap 5.0.x CSS-->
+
+  <link href="./Bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="./custom.css" rel="stylesheet">
+
+</head>
+
+    <body>
+        
+        <div class="container-fluid">
+            <div class="row headerArea">
+
+                <!--heading/nav-->
+                <div class="col-sm-12 bg-dark">
+                  <!--
+                      below in the navbar-brand, the width element helps keep the picture at a specific dimension. 
+                      Since the anchor parent container doens't restrict the size, none of the Bootstrap classes were able to keep it smaller. 
+                      One possible future improvement for this would be to find a way to make it scalably small, so it maintains the a defined presence on every device width
+                      solution source: https://bootstrapious.com/p/bootstrap-navbar-with-logo
+
+                      dropdown button source: https://mdbootstrap.com/docs/standard/components/dropdowns/
+                  -->
+                  <nav class="navbar navbar-expand navbar-dark bg-dark">
+                      <a class="navbar-brand" href="#">
+                          <img src="./images/logo/whyKnotLogo.png" width="50" alt="site logo" class="img-fluid img-thumbnail">
+                          <p class="h1 text-light d-inline align-middle">Why Knot</p>
+
+                      </a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <!--stacking buttons when we are below 768px only displaying them as a row above that-->
+                        <div class="navbar-nav custom-btn flex-column flex-sm-row gap-2">
+                            <a href="./index.html" class="btn btn-primary me-2">Home</a>
+
+                            <div class="dropdown">
+                                <button class="btn btn-outline-primary me-2 dropdown-toggle"
+                                        id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    Designs
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">See all designs</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="./designs/dinos.html">Dinos</a></li>
+                                    <li><a class="dropdown-item" href="./designs/dog.html">Dog</a></li>
+                                    <li><a class="dropdown-item" href="./designs/jack.html">Jack Skellington</a></li>
+                                    <li><a class="dropdown-item" href="./designs/totoro.html">Totoro</a></li>
+
+                                </ul>
+                            </div>
+
+                            <a href="./credits.html" class="btn btn-primary me-2">Credits</a>
+                        
+                   
+                    
+
+
+                        </div>
+                      </div>
+                  </nav>
+                </div>
+
+
+            </div>
+
+
+            <div class="row productArea px-5">
+
+                <!--Gallery content-->
+
+                <div class="col-12 col-md-6 col-lg-4 col-xxl-3 my-3">
+
+                
+                  <div class="card mx-auto mt-3" style="width: 18rem;">
+                    <img src="./images/dino/dino-blue.JPG" class="card-img-top" alt="a blue crocheted dinosaur">
+                    <div class="card-body">
+                        <h5 class="card-title">Dino</h5>
+                        <p class="card-text">A dinosaur, one of the earlier designs. Check out the product page for variations!</p>
+                        <a href="./designs/dinos.html" class="btn btn-primary">Learn more</a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xxl-3 my-3">
+
+                  <div class="card mx-auto mt-3" style="width: 18rem;">
+                    <img src="./images/jack/jack-skellington.JPG" class="card-img-top" alt="a crocheted Jack Skellington head">
+                    <div class="card-body">
+                        <h5 class="card-title">Jack Skellington</h5>
+                        <p class="card-text">The one, the only: Jack Skellington! Just in time for Halloween!</p>
+                        <a href="./designs/jack.html" class="btn btn-primary">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xxl-3 my-3">
+
+                  <div class="card mx-auto mt-3" style="width: 18rem;">
+                    <img src="./images/totoro/totoro.JPG" class="card-img-top" alt="a crocheted totoro">
+                    <div class="card-body">
+                        <h5 class="card-title">Totoro</h5>
+                        <p class="card-text">It's my neighbor Totoro!</p>
+                        <a href="./designs/totoro.html" class="btn btn-primary">Learn more</a>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 col-xxl-3 my-3">
+
+                  <div class="card mx-auto mt-3" style="width: 18rem;">
+                    <img src="./images/dog/dog.JPG" class="card-img-top" alt="a picture of a blue crocheted dinosaur">
+                    <div class="card-body">
+                        <h5 class="card-title">Dog</h5>
+                        <p class="card-text">A cuddly dog modeled after a customer's pet</p>
+                        <a href="./designs/dog.html" class="btn btn-primary">Learn more</a>
+                    </div>
+                  </div>
+
+                </div>
+
+                
+
+
+            </div>
+
+            <div class="row footerArea">
+
+                <!--footer-->
+                <footer class="col-12 bg-dark pt-2">
+                  <p class="text-light text-center">Site Design &copy; Martin R 2021, Products &copy; Anahi M 2021</p>
+                  <p class="text-light text-center">All Rights Reserved</p>
+                </footer>
+
+            </div>
+
+        </div> <!--end container fluid-->
+
+
+
+    <!--Load JS for BootStrap components-->
+    <script src="./Bootstrap/bootstrap.min.js"></script>
+
+  
+  </body>
+
+</html>

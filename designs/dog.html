@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Why Knot > Dog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Load bootstrap 5.0.x CSS-->
+  <link href="../Bootstrap/bootstrap.min.css" rel="stylesheet">
+
+  <link href="../custom.css" rel="stylesheet">
+
+    <!--Load JQuery JS-->
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+
+      <!--Plugin Source https://frontendscript.com/jquery-image-gallery-with-thumbnails-and-zoom/  -->
+    <!--Load required plugin JS
+      NOTE by doing this here instead of at the end of <body> we need to use $(document).ready
+    -->
+    <!-- LC Lightbox Js -->
+    <script src="../LC-Lightbox-LITE-gallery/js/lc_lightbox.lite.js"></script>
+    <!-- AlloyFinger JS -->
+    <script src="../LC-Lightbox-LITE-gallery/lib/AlloyFinger/alloy_finger.min.js" ></script>
+
+    <!--load required CSS for plugin-->
+    <!-- LC Lightbox CSS -->
+    <link rel="stylesheet" href="../LC-Lightbox-LITE-gallery/css/lc_lightbox.min.css" />
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="../LC-Lightbox-LITE-gallery/skins/minimal.css" />
+
+    <!--some more required content pulled from the demo but not listed in the documentation!-->
+    <!-- PAGE'S BASE CSS -->
+
+<style>
+  /*! normalize.css v2.1.2 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+  
+  
+  /*
+  body{font:14px/20px Arial,sans-serif;background-color:#4E5869;margin:0;padding:0;color:#000}dl,ol,ul{padding:0;margin:0}h1,h2,h3,h4,h5,h6,p{margin-top:0;padding-right:15px;padding-left:15px}a img{border:none}a:link{color:#414958;text-decoration:underline}a:visited{color:#4E5869;text-decoration:underline}a:active,a:focus,a:hover{text-decoration:none}.container{width:80%;max-width:1260px;min-width:335px;background-color:#FFF;margin:0 auto}.header{background-color:#fdfdfd;}.sidebar1{float:right;width:20%;background-color:#93A5C4;padding-bottom:10px}.content{padding:10px 0;width:100%;float:right;background-color:#efefef}.content ol,.content ul{padding:0 15px 15px 40px}ul.nav{list-style:none;border-top:1px solid #666;margin-bottom:15px}ul.nav li{border-bottom:1px solid #666}ul.nav a,ul.nav a:visited{padding:5px 5px 5px 15px;display:block;text-decoration:none;background-color:#8090AB;color:#000}ul.nav a:active,ul.nav a:focus,ul.nav a:hover{background-color:#6F7D94;color:#FFF}.fltrt{float:right;margin-left:8px}.fltlft{float:left;margin-right:8px}.clearfloat{clear:both;height:0;font-size:1px;line-height:0}.content,.sidebar1{min-height:500px}.content>div{margin:20px 15px}@media screen and (max-width:900px){.content>div{width:100%!important}}
+  
+  #logo {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAYlJREFUeNrcV4FtgzAQBJQB3AlCN0gmiNkgnaBhg25QMUHSCUInKJkgZgNGyAhskP6r58qJsCEUE5qXLMvI8t//359NGDhMytWepk3gz7LQ4VzSdAw8WxTc2WYd9ymlymQop5Td87/IQEVDR137AhAahPNlFZWvtpVgRgtmulcA5CO5BmFyQHou8wJjmm3YB0B9TwAp1fKJ5mcap7EB7Mh5/qNKJTv/GAuAQsSHq+/zMaQ4R6RfzGRqpwJrZvWbbwDaGeuEwLc1hmm6HNshS8BMTxG5aDkjxv5sSAAFIo07nsPR7/p0RuSI6vWGcwQ4UQwFQPaQ6FVDp0z/RTRJAMxovj75rbDsqP0pnmyVjYikIawjR1z/TgA5HaYguRXEqO29qCXa1Y6iiVuRZaNr3dQxrrUTfGg+j8wfBtwBJ+hBm8pxBj7hfNsAWpdncZm60grA5EOG/n5H+mIAEx2y8wtAl/XWLhCIiCW5pPECciZ9ROcvPyacuj3Y/Pg6MDqAzLOP3EZAtm8BBgDqc3bEpb6xyQAAAABJRU5ErkJggg==') no-repeat center center transparent;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    display: inline-block;	
+    position: relative;
+    bottom: -4px;
+    left: -4px;
+  }
+  */
+  .elem, .elem * {
+    box-sizing: border-box;
+    margin: 0 !important;	
+  }
+  .elem {
+    display: inline-block;
+    font-size: 0;
+    width: 33%;
+    border: 20px solid transparent;
+    border-bottom: none;
+    background: #fff;
+    padding: 10px;
+    height: auto;
+    background-clip: padding-box;
+  }
+  .elem > span {
+    display: block;
+    cursor: pointer;
+    height: 0;
+    padding-bottom:	70%;
+    background-size: cover;	
+    background-position: center center;
+  }
+  </style>
+  
+  <!-- LIGHTBOX FADING SHOW/HIDE EFFECT (as explained in documentation) -->
+  <style>
+  .lcl_fade_oc.lcl_pre_show #lcl_overlay,
+  .lcl_fade_oc.lcl_pre_show #lcl_window,
+  .lcl_fade_oc.lcl_is_closing #lcl_overlay,
+  .lcl_fade_oc.lcl_is_closing #lcl_window {
+    opacity: 0 !important;
+  }
+  .lcl_fade_oc.lcl_is_closing #lcl_overlay {
+    -webkit-transition-delay: .15s !important; 
+    transition-delay: .15s !important;
+  }
+  </style>
+  
+
+
+</head>
+
+    <body>
+        
+        <div class="container-fluid">
+
+          <div class="row headerArea">
+
+                            <!--heading/nav-->
+                            <div class="col-sm-12 bg-dark">
+                              <!--
+                                  below in the navbar-brand, the width element helps keep the picture at a specific dimension. 
+                                  Since the anchor parent container doens't restrict the size, none of the Bootstrap classes were able to keep it smaller. 
+                                  One possible future improvement for this would be to find a way to make it scalably small, so it maintains the a defined presence on every device width
+                                  solution source: https://bootstrapious.com/p/bootstrap-navbar-with-logo
+            
+                                  dropdown button source: https://mdbootstrap.com/docs/standard/components/dropdowns/
+                              -->
+                              <nav class="navbar navbar-expand navbar-dark bg-dark">
+                                  <a class="navbar-brand" href="#">
+                                      <img src="../images/logo/whyKnotLogo.png" width="50" alt="site logo" class="img-fluid img-thumbnail">
+                                      <p class="h1 text-light d-inline align-middle">Why Knot</p>
+            
+                                  </a>
+                                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                  </button>
+                                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                    <!--stacking buttons when we are below 768px only displaying them as a row above that-->
+                                    <div class="navbar-nav custom-btn flex-column flex-sm-row gap-2">
+                                        <a href="../index.html" class="btn btn-primary me-2">Home</a>
+            
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-primary me-2 dropdown-toggle"
+                                                    id="dropdownMenuButton"
+                                                    data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                Designs
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+                                                <li><a class="dropdown-item" href="../designs.html">See all designs</a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item" href="../designs/dinos.html">Dinos</a></li>
+                                                <li><a class="dropdown-item" href="#">Dog</a></li>
+                                                <li><a class="dropdown-item" href="../designs/jack.html">Jack Skellington</a></li>
+                                                <li><a class="dropdown-item" href="../designs/totoro.html">Totoro</a></li>
+            
+                                            </ul>
+                                        </div>
+            
+                                        <a href="../credits.html" class="btn btn-primary me-2">Credits</a>
+                                    
+                               
+                                
+            
+            
+                                    </div>
+                                  </div>
+                              </nav>
+                            </div>
+            
+
+
+          </div>
+
+            <div class="row productArea">
+
+
+                <!--content-->
+
+                <div class="col-md-2 my-3 d-flex justify-content-center align-items-center">
+
+                  <p class="h4 text-center">A cuddly dog based on a customer's pet!</p>
+                  
+              </div>
+              
+                <!--Gallery content-->
+                <div class="col-md-10 my-3">
+
+                  <div class="content">
+
+                    <!--JS gallery-->
+            
+                    <a class="elem" href="../images/dog/dog.JPG" 
+                    title="Custom Dog" data-lcl-txt="A cuddly pup" data-lcl-author="Anahi M" data-lcl-thumb="../images/dog/dog.JPG">
+                      <span style="background-image: url(../images/dog/dog.JPG);"></span>
+                    </a>
+
+
+                  </div>
+            
+
+
+                </div>
+
+
+                <!--footer-->
+                <footer class="col-sm-12 bg-dark pt-2">
+                    <p class="text-light text-center">Site Design &copy; Martin R 2021, Products &copy; Anahi M 2021</p>
+                    <p class="text-light text-center">All Rights Reserved</p>
+                </footer>
+
+            </div>
+        </div>
+
+
+
+    <!--Load JS for BootStrap components-->
+    <script src="../Bootstrap/bootstrap.min.js"></script>
+
+    
+      <!--JS to run the JQuery plugin-->
+      <script>
+        $(document).ready(function(e) {
+          // live handler
+          lc_lightbox('.elem', {
+            wrap_class: 'lcl_fade_oc',
+            gallery : true,	
+            thumb_attr: 'data-lcl-thumb', 
+            
+            skin: 'minimal',
+            radius: 0,
+            padding: 0,
+            border_w: 0,
+          });	
+        });
+      </script>
+  
+  
+  </body>
+
+</html>

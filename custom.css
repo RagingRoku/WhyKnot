@@ -1,0 +1,22 @@
+
+/*
+selector: get all BS buttons that are descendants of class .custom-btn
+rounded navbar buttons
+
+*/
+.custom-btn .btn {
+    border-radius: 20px;
+}
+
+.custom-btn .btn-primary:hover{
+    color: #0d6efd;
+    background-color: transparent;
+}
+.custom-btn .btn-outline-primary:hover{
+    color: #0d6efd;
+    background-color: transparent;
+}
+
+.productArea{
+    background: linear-gradient(180deg, rgba(255,192,203,1) 0%, rgba(242,155,155,1) 70%);
+}
